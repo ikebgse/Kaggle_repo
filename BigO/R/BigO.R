@@ -202,9 +202,9 @@ BigO <- function(training, test.real, outputCSV=TRUE){
   predMatrix <- cbind(pred.rf1, pred.rf2, pred.rf3, pred.gbm1, pred.gbm2, pred.gbm3)
 
 
-  pred.avg<-sapply(1:nrow(m), function(idx) {
+  pred.avg<-sapply(1:nrow(predMatrix), function(idx) {
     # get the number of time each entry in matrix occurs
-    t <- table(t(m[idx, ]))
+    t <- table(t(predMatrix[idx, ]))
     # get the maximum count
     t.max <- max(t)
     # sample 1 value that equate to maximum count
